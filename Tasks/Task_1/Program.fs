@@ -19,3 +19,10 @@ let reverseList list =
         | [] -> reversedList
         | head :: tail -> subReverseList tail (head :: reversedList)
     subReverseList list []
+
+let makeList n m =
+    if m > n then failwith "m must be greater than n"
+    let rec addElement list i =
+        if i = m then list
+        else addElement (list |> List.head |> fun x -> x * 2 :: list) (i + 1)
+    reverseList (addElement [pown 2 n] n)
