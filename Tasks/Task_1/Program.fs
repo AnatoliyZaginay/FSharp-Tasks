@@ -12,3 +12,10 @@ let fibonacci number =
         else subFibonacci secondNumber (firstNumber + secondNumber) (i + 1)
     if number = 0 then 0
     else subFibonacci 0 1 1
+
+let reverseList list = 
+    let rec subReverseList list reversedList =
+        match list with
+        | [] -> reversedList
+        | head :: tail -> subReverseList tail (head :: reversedList)
+    subReverseList list []
