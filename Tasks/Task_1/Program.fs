@@ -23,11 +23,11 @@ let reverseList list =
         | head :: tail -> subReverseList tail (head :: reversedList)
     subReverseList list []
 
-/// Creates a list that consists of powers of 2 from n to m.
+/// Creates a list that consists of powers of 2 from n to n + m.
 let createList n m =
-    if m > n then failwith "m must be greater than or equal to n."
+    if n + m < n then failwith "n + m must be greater or equal to n."
     let rec addElement list i =
-        if i = m then list
+        if i = n + m then list
         else addElement (list |> List.head |> fun x -> x * 2.0 :: list) (i + 1)
     reverseList (addElement [pown 2 n] n)
 
