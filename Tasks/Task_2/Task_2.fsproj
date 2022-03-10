@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="PrimeNumbers.fs" />
     <Compile Include="ArithmeticParseTree.fs" />
     <Compile Include="BinaryTree.fs" />
     <Compile Include="EvenNumbers.fs" />
