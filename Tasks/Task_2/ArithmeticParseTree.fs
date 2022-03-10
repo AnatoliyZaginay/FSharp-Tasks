@@ -18,6 +18,6 @@ let rec calculateArithmeticParseTree arithmeticParseTree =
         | Subtraction -> calculateArithmeticParseTree(leftSubTree) - calculateArithmeticParseTree(rightSubTree)
         | Multiplication -> calculateArithmeticParseTree(leftSubTree) * calculateArithmeticParseTree(rightSubTree)
         | Division ->
-            let divider = calculateArithmeticParseTree(rightSubTree)
-            if divider = 0 then failwith "You can't divide by zero"
+            let divider = calculateArithmeticParseTree rightSubTree
+            if divider = 0 then failwith "You can't divide by zero."
             calculateArithmeticParseTree(leftSubTree) / divider
