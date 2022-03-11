@@ -1,7 +1,9 @@
 ﻿module ArithmeticParseTree
 
+open System
+
 type ArithmeticParseTree =
-| Leaf of int
+| Leaf of float
 | Tree of Operation * ArithmeticParseTree * ArithmeticParseTree
 and Operation =
 | Sum
@@ -19,5 +21,5 @@ let rec calculateArithmeticParseTree arithmeticParseTree =
         | Multiplication -> calculateArithmeticParseTree(leftSubTree) * calculateArithmeticParseTree(rightSubTree)
         | Division ->
             let divider = calculateArithmeticParseTree rightSubTree
-            if divider = 0 then failwith "You can't divide by zero."
+            if divider = 0 then raise (ArgumentException("You can't divide by zero."))
             calculateArithmeticParseTree(leftSubTree) / divider
