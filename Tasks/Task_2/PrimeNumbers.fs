@@ -1,5 +1,6 @@
 ﻿module PrimeNumbers
 
+/// Gets an infinite sequence of prime numbers.
 let getPrimeNumbersSeq =
     let rec isPrime number primeNumbers =
         match primeNumbers with
